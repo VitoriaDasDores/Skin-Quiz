@@ -97,7 +97,17 @@
                     alt="Foto de uma modelo sorrindo"
                     class="mx-auto w-5/12"
                 >
+      
+                <div class="mt-2 mt-5 text-xl font-bold flex justify-center">
+                    <button id="quiz-button_pc" class="flex bg-[#d30024] text-white rounded-full py-3 px-4  hover:bg-[#FFD9E1] hover:text-[#D30024] md:w-64">
+                        <div id="quiz-div_pc" class="transition-all duration-500">
+                            <i id="quiz-arrow_pc" class="ri-arrow-right-line p-2 mr-2 rounded-3xl bg-white text-[#D30024] transition-all duration-1500"></i>
+                        </div>
+                        <span id="quiz_text_pc" class="block">VAMOS COMEÇAR</span>
+                    </button>
+                </div>
             </div>
+
         </section>
 
         <section class="my-5 sm:hidden">
@@ -276,6 +286,34 @@
     </main>
 
     <script>
+        const quiz_button = document.querySelector('#quiz-button_pc');
+        const quiz_arrow = document.querySelector('#quiz-arrow_pc');
+        const quiz_text = document.querySelector('#quiz_text_pc');
+        const quiz_div = document.querySelector('#quiz-div_pc');
+
+        quiz_button.addEventListener('mouseover', () => {
+            quiz_arrow.classList.replace('bg-white', 'bg-[#D30024]')
+            quiz_arrow.classList.replace('text-[#D30024]', 'text-[#FFD9E1]')
+        });
+
+        quiz_button.addEventListener('mouseout', () => {
+            quiz_arrow.classList.replace('bg-[#D30024]', 'bg-white')
+            quiz_arrow.classList.replace('text-[#FFD9E1]', 'text-[#D30024]')
+        });
+
+        quiz_button.addEventListener('click', () => {
+            quiz_text.classList.replace('block', 'hidden');
+            quiz_text.classList.replace('block', 'hidden');
+            quiz_button.classList.add('text-left');
+            quiz_arrow.classList.remove('mr-2');
+            quiz_div.classList.add('w-full');
+            quiz_div.classList.add('rounded-full');
+            quiz_div.classList.add('pl-48');
+            setTimeout(() => {
+                window.location.href = './quiz.html';
+            }, 700);
+        });
+
         const quizButton = document.querySelector('#quiz_button');
         const quizLine = document.querySelector('#quiz_line');
         const quizIcon = document.querySelector('#quiz_icon');
