@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap');
+        .font-title {
+            font-family: "Abhaya Libre", serif;
+            font-weight: 800;
+            font-style: normal;
+        }
+    </style>
+    <title>SkinQuiz</title>
+</head>
+
+<body>
+    <header class="fixed top-0 bg-white w-full sm:bg-[#FFD9E1] z-50">
+        <div class="px-4 py-4 flex justify-between max-w-screen-lg mx-auto sm:px-8">
+            <h1 class="font-title text-2xl text-[#d30024] flex items-center">
+                <a href="./index.html">
+                    <i class="ri-empathize-line pr-1 font-extralight text-xl my-auto"></i>
+                    SkinQuiz
+                </a>
+            </h1>
+
+            <div class="my-auto flex gap-x-3 text-xl text-[#333333] sm:hidden">
+                <ion-icon name="person-outline"></ion-icon>
+    
+                <ion-icon name="notifications-outline"></ion-icon>
+            </div>
+
+            <div class="my-auto hidden sm:flex justify-between w-8/12">
+                <div class="flex justify-around gap-x-8 text-xl">
+                    <a
+                        href="/index.html"
+                        class="hover:text-[#d30024]"
+                    >Home</a>
+
+                    <a
+                        href="https://www.sallve.com.br/blogs/sallve/por-que-e-tao-importante-conhecermos-nosso-tipo-de-pele-montando?_pos=16&_sid=8c5a112bd&_ss=r"
+                        class="hover:text-[#d30024]"
+                    >Tipos de Pele</a>
+
+                    <a
+                        href="/produtinhos.html"
+                        class="hover:text-[#d30024]"
+                    >Produtinhos</a>
+                </div>
+
+                <div>
+                    <ion-icon
+                        class="pt-1 my-auto text-xl"
+                        name="person-outline"
+                    ></ion-icon>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="mx-4 mt-16 max-w-screen-lg sm:mx-auto">
+        <section class="my-1">
+            <div class="relative sm:hidden">
+                <img
+                    class="rounded-3xl mx-auto"
+                    src="./images/home_banner_1.png"
+                    alt="Foto de uma modelo sorrindo com o texto 'Descubra o seu tipo de pele'"
+                >
+
+                <button
+                    id="quiz_button"
+                    class="w-40 absolute flex bottom-3 left-3 text-[#FFD9E1] text-md font-bold bg-[#d30024] py-1 px-2 rounded-full transition-all duration-400"
+                >
+                    <div
+                        id="quiz_line"
+                        class="text-left transition-all duration-1000"
+                    >
+                        <ion-icon
+                            id="quiz_icon"
+                            name="chevron-forward-outline"
+                            class="mt-1 mr-1 bg-[#FFD9E1] text-[#d30024] rounded-full transition-all duration-1000"
+                        ></ion-icon>
+                    </div>
+
+                    <span id="quiz_text" class="pr-1">Vamos começar</span>
+                </button>
+            </div>
+
+            <div class="hidden sm:block">
+                <img
+                    src="images/home_banner_2.png"
+                    alt="Foto de uma modelo sorrindo"
+                    class="mx-auto w-5/12"
+                >
+            </div>
+        </section>
+
+        <section class="my-5 sm:hidden">
+            <h3 class="font-extralight text-xl font-semibold my-2">
+                Descobertas
+                <span class="text-[#d30024] text-3xl font-extrabold">...</span>
+            </h3>
+
+            <div class="flex snap-x gap-x-5 snap-mandatory overflow-scroll">
+
+                <div class="snap-start shrink-0 w-auto">
+                    <img
+                        src="./images/descobertas/pha.svg"
+                        alt="Ácido Maltobiônico: o que esse PHA pode fazer pela sua pele"
+                    >
+                </div>
+
+                <div class="snap-start shrink-0 w-auto">
+                    <img
+                        src="./images/descobertas/foliculite.svg"
+                        alt="Foliculite: o que é, quais as causas e como tratar"
+                    >
+                </div>
+
+                <div class="snap-start shrink-0 w-auto">
+                    <img
+                        src="./images/descobertas/jovem.svg"
+                        alt="Como começar a cuidar da pele na adolescência?"
+                    >
+                </div>
+
+            </div>
+        </section>
+
+        <section class="my-5 sm:hidden">
+            <h3 class="font-extralight text-xl font-semibold my-2">
+                Tipos de pele
+                <span class="text-[#d30024] text-3xl font-extrabold">...</span>
+            </h3>
+
+            <div class="flex snap-x gap-x-5 snap-mandatory overflow-scroll text-center text-lg font-semibold">
+
+                <div class="snap-start shrink-0 w-auto">
+                    <img
+                        src="./images/tipos de pele/oleosa.svg"
+                        alt="Pele oleosa"
+                        class="h-20"
+                    >
+
+                    <p class="text-[#333333]">Oleosa</p>
+                </div>
+
+                <div class="snap-start shrink-0 w-auto">
+                    <img
+                        src="./images/tipos de pele/seca.svg"
+                        alt="Pele seca"
+                        class="h-20"
+                    >
+
+                    <p class="text-[#333333]">Seca</p>
+                </div>
+
+                <div class="snap-start shrink-0 w-auto">
+                    <img
+                        src="./images/tipos de pele/mista.svg"
+                        alt="Pele mista"
+                        class="h-20"
+                    >
+
+                    <p class="text-[#333333]">Mista</p>
+                </div>
+
+                <div class="snap-start shrink-0 w-auto">
+                    <img
+                        src="./images/tipos de pele/sensível.svg"
+                        alt="Pele sensível"
+                        class="h-20"
+                    >
+
+                    <p class="text-[#333333]">Sensível</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="my-5 sm:hidden">
+            <h3 class="font-extralight text-xl font-semibold my-2">
+                Necessidades
+                <span class="text-[#d30024] text-3xl font-extrabold">...</span>
+            </h3>
+
+            <div class="flex snap-x gap-x-5 snap-mandatory overflow-scroll text-center text-lg font-semibold">
+
+                <div class="snap-start shrink-0 w-auto">
+                    <img
+                        src="./images/necessidades/acne.svg"
+                        alt="Acne"
+                        class="h-20"
+                    >
+
+                    <p class="text-[#333333]">Acne</p>
+                </div>
+
+                <div class="snap-start shrink-0 w-auto">
+                    <img
+                        src="./images/necessidades/cravos.svg"
+                        alt="Cravos"
+                        class="h-20"
+                    >
+
+                    <p class="text-[#333333]">Cravos</p>
+                </div>
+
+                <div class="snap-start shrink-0 w-auto">
+                    <img
+                        src="./images/necessidades/manchas.svg"
+                        alt="Manchas"
+                        class="h-20"
+                    >
+
+                    <p class="text-[#333333]">Manchas</p>
+                </div>
+
+                <div class="snap-start shrink-0 w-auto">
+                    <img
+                        src="./images/necessidades/rugas.svg"
+                        alt="Rugas"
+                        class="h-20"
+                    >
+
+                    <p class="text-[#333333]">Rugas</p>
+                </div>
+
+                <div class="snap-start shrink-0 w-auto">
+                    <img
+                        src="./images/necessidades/olheiras.svg"
+                        alt="Olheiras"
+                        class="h-20"
+                    >
+
+                    <p class="text-[#333333]">Olheiras</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const quizButton = document.querySelector('#quiz_button');
+        const quizLine = document.querySelector('#quiz_line');
+        const quizIcon = document.querySelector('#quiz_icon');
+        const quizText = document.querySelector('#quiz_text');
+
+        quizButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            quizText.classList.add('hidden');
+            quizLine.classList.add('w-36');
+            quizIcon.classList.add('pl-32');
+            setTimeout(() => {
+                window.location.href = './quiz.html';
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>
+

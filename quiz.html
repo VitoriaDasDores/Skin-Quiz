@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        .font-title {
+            font-family: "Abhaya Libre", serif;
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        .font-number {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .font-question {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        .font-data {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+    </style>
+    <title>SkinQuiz</title>
+</head>
+
+<body>
+    <header class="flex justify-between px-8 py-4">
+        <a
+            href="./index.html"
+            class="text-2xl"
+        >
+            <ion-icon name="chevron-back-outline"></ion-icon>
+        </a>
+
+        <h1 class="font-title text-2xl text-[#d30024]">Skin Care Quiz</h1>
+
+        <p id="step" class="text-[#333333] font-number text-lg">1 / 4</p>
+    </header>
+
+    <main class="text-center relative">
+        <div id="q1" class="block absolute top-0 w-full opacity-100 transition-opacity ease-in-out duration-500">
+            <h3 class="my-12 mx-auto text-[#333333] text-2xl font-question w-8/12">
+                Como é a textura da sua pele?
+            </h3>
+    
+            <div class="my-8 grid grid-cols-2 gap-y-8">
+    
+                <button
+                    id="q1_b1"
+                    class="mx-auto col-span-1 w-10/12 h-48 relative"
+                >
+                    <div id="q1_b1_d1" class="absolute top-0 opacity-100 w-full h-full border-2 rounded-2xl border-[#858585] py-2 transition-opacity ease-in-out duration-500">
+                        <img
+                            class="mx-auto"
+                            src="./images/desenhos/roxo.png"
+                            alt="Desenho de um rosto com pontos roxos"
+                        >
+    
+                        <div>
+                            <span class="font-bold text-sm">
+                                Pele Mista
+                            </span>
+    
+                            <p class="text-xs mx-2">
+                                Sinto ela com brilho na testa, nariz, queixo e seca em outras áreas
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div id="q1_b1_d2" class="absolute top-0 opacity-0 w-full h-full bg-[#E9B1FD] rounded-2xl transition-opacity ease-in-out duration-500">
+                        <p class="py-20 text-white text-xl font-bold">
+                            Pele Mista
+                        </p>
+                    </div>
+                </button>
+    
+                <button
+                    id="q1_b2"
+                    class="mx-auto col-span-1 w-10/12 h-48 relative"
+                >
+                    <div id="q1_b2_d1" class="absolute top-0 opacity-100 w-full h-full border-2 rounded-2xl border-[#858585] py-2 transition-opacity ease-in-out duration-500">
+                        <img
+                            class="mx-auto"
+                            src="./images/desenhos/verde.png"
+                            alt="Desenho de um rosto com pontos verdes"
+                        >
+    
+                        <div>
+                            <span class="font-bold text-sm">
+                                Pele Oleosa
+                            </span>
+    
+                            <p class="text-xs mx-2">
+                                Sinto ela sempre brilhando e produzindo sebo
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div id="q1_b2_d2" class="absolute top-0 opacity-0 w-full h-full bg-[#B1D132] rounded-2xl transition-opacity ease-in-out duration-500">
+                        <p class="py-20 text-white text-xl font-bold">
+                            Pele Oleosa
+                        </p>
+                    </div>
+                </button>
+    
+                <button
+                    id="q1_b3"
+                    class="mx-auto col-span-1 w-10/12 h-48 relative"
+                >
+                    <div id="q1_b3_d1" class="absolute top-0 opacity-100 w-full h-full border-2 rounded-2xl border-[#858585] py-2 transition-opacity ease-in-out duration-500">
+                        <img
+                            class="mx-auto"
+                            src="./images/desenhos/amarelo.png"
+                            alt="Desenho de um rosto com pontos amarelos"
+                        >
+    
+                        <div>
+                            <span class="font-bold text-sm">
+                                Pele Normal
+                            </span>
+    
+                            <p class="text-xs mx-1">
+                                Sinto ela equilibrada, não está seca demais nem oleosa demais
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div id="q1_b3_d2" class="absolute top-0 opacity-0 w-full h-full bg-[#FDF67B] rounded-2xl transition-opacity ease-in-out duration-500">
+                        <p class="py-20 text-white text-xl font-bold">
+                            Pele Normal
+                        </p>
+                    </div>
+                </button>
+    
+                <button
+                    id="q1_b4"
+                    class="mx-auto col-span-1 w-10/12 h-48 relative"
+                >
+                    <div id="q1_b4_d1" class="absolute top-0 opacity-100 w-full h-full border-2 rounded-2xl border-[#858585] py-2 transition-opacity ease-in-out duration-500">
+                        <img
+                            class="mx-auto"
+                            src="./images/desenhos/azul.png"
+                            alt="Desenho de um rosto com pontos azuis"
+                        >
+    
+                        <div>
+                            <span class="font-bold text-sm">
+                                Pele Seca
+                            </span>
+    
+                            <p class="text-xs mx-1">
+                                Sinto ela repuxando e descamando em algumas partes
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div id="q1_b4_d2" class="absolute top-0 opacity-0 w-full h-full bg-[#B1C8FE] rounded-2xl transition-opacity ease-in-out duration-500">
+                        <p class="py-20 text-white text-xl font-bold">
+                            Pele Seca
+                        </p>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <div id="q2" class="hidden absolute top-0 w-full opacity-0 transition-opacity ease-in-out duration-500">
+            <h3 class="my-12 mx-auto text-[#333333] text-2xl font-question w-10/12">
+                Sua pele é sensível?<br>
+                <span class="text-sm text-[#B1D132] py-0 my-0">
+                    Fica vermelha ou irritada com facilidade?
+                </span>
+            </h3>
+
+
+            <div>
+                <div>
+                    <button
+                        id="q2_b1"
+                        class="my-4 py-2 w-6/12 border-2 border-black rounded-xl text-black text-xl font-bold transition-all duration-200"
+                    >
+                        Sim
+                    </button>
+                </div>
+
+                <div>
+                    <button
+                        id="q2_b2"
+                        class="my-4 py-2 w-6/12 border-2 border-black rounded-xl text-black text-xl font-bold transition-all duration-200"
+                    >
+                        Não
+                    </button>
+                </div>
+            </div>
+
+            <div>
+                <button
+                    id="q2_back"
+                    class="my-12 underline"
+                >
+                    voltar para a etapa anterior
+                </button>
+            </div>
+        </div>
+
+        <div id="q3" class="hidden absolute top-0 w-full opacity-0 transition-opacity ease-in-out duration-500">
+            <h3 class="my-12 mx-auto text-[#333333] text-2xl font-question w-10/12">
+                Selecione sua necessidade:<br>
+                <span class="text-sm text-[#73A3DD] py-0 my-0">
+                    Você pode escolher apenas uma opção
+                </span>
+            </h3>
+
+
+            <div class="my-8 grid grid-cols-2 gap-y-8">
+    
+                <button
+                    id="q3_b1"
+                    class="mx-auto col-span-1 w-9/12 h-40  border-2 rounded-2xl border-[#858585] text-black"
+                >
+                    <div class="w-full h-full">
+                        <img
+                            class="mx-auto h-16"
+                            src="./images/desenhos/acne.png"
+                            alt="Desenho de uma acne"
+                        >
+    
+                        <div>
+                            <span class="font-bold text-sm">
+                                Acnes e Cravos
+                            </span>
+    
+                            <p class="text-xs mx-2">
+                                Acnes, cravos, espinhas e maskne
+                            </p>
+                        </div>
+                    </div>
+                </button>
+
+                <button
+                    id="q3_b2"
+                    class="mx-auto col-span-1 w-9/12 h-40 border-2 rounded-2xl border-[#858585] text-black"
+                >
+                    <div class="w-full h-full">
+                        <img
+                            class="mx-auto h-16"
+                            src="./images/desenhos/ressecamento.png"
+                            alt="Desenho de um cacto"
+                        >
+    
+                        <div>
+                            <span class="font-bold text-sm">
+                                Ressecamento
+                            </span>
+    
+                            <p class="text-xs mx-2">
+                                Pele ressecada, descamando
+                            </p>
+                        </div>
+                    </div>
+                </button>
+
+                <button
+                    id="q3_b3"
+                    class="mx-auto col-span-1 w-9/12 h-40 border-2 rounded-2xl border-[#858585] text-black"
+                >
+                    <div class="w-full h-full">
+                        <img
+                            class="mx-auto h-16"
+                            src="./images/desenhos/manchas.png"
+                            alt="Desenho de uma mancha"
+                        >
+    
+                        <div>
+                            <span class="font-bold text-sm">
+                                Manchas e Cicatrizes
+                            </span>
+    
+                            <p class="text-xs mx-2">
+                                De espinhas ou acnes, manchas escuras e melasma
+                            </p>
+                        </div>
+                    </div>
+                </button>
+
+                <button
+                    id="q3_b4"
+                    class="mx-auto col-span-1 w-9/12 h-40 border-2 rounded-2xl border-[#858585] text-black"
+                >
+                    <div class="w-full h-full">
+                        <img
+                            class="mx-auto h-16"
+                            src="./images/desenhos/sensibilidade.png"
+                            alt="Desenho de uma pena"
+                        >
+    
+                        <div>
+                            <span class="font-bold text-sm">
+                                Sensibilidade e Irritação
+                            </span>
+    
+                            <p class="text-xs mx-2">
+                                vermelhidão e rosácea
+                            </p>
+                        </div>
+                    </div>
+                </button>
+
+                <button
+                    id="q3_b5"
+                    class="mx-auto col-span-1 w-9/12 h-40 border-2 rounded-2xl border-[#858585] text-black"
+                >
+                    <div class="w-full h-full">
+                        <img
+                            class="mx-auto h-16"
+                            src="./images/desenhos/sinais.png"
+                            alt="Desenho de uma seta para cima sobre uma linha curva"
+                        >
+    
+                        <div>
+                            <span class="font-bold text-sm">
+                                Prevenção de Sinais
+                            </span>
+    
+                            <p class="text-xs mx-2">
+                                Flacidez no rosto e no pescoço
+                            </p>
+                        </div>
+                    </div>
+                </button>
+
+                <button
+                    id="q3_b6"
+                    class="mx-auto col-span-1 w-9/12 h-40 border-2 rounded-2xl border-[#858585] text-black"
+                >
+                    <div class="w-full h-full">
+                        <img
+                            class="mx-auto h-16"
+                            src="./images/desenhos/rugas.png"
+                            alt="Desenho de linhas com curvas para baixo"
+                        >
+    
+                        <div>
+                            <span class="font-bold text-sm">
+                                Linhas Finas e Rugas
+                            </span>
+    
+                            <p class="text-xs mx-2">
+                                Causadas por ação do tempo
+                            </p>
+                        </div>
+                    </div>
+                </button>
+
+            </div>
+
+            <div>
+                <button
+                    id="q3_back"
+                    class="my-12 underline"
+                >
+                    voltar para a etapa anterior
+                </button>
+            </div>
+        </div>
+
+        <div id="q4" class="hidden absolute top-0 w-full opacity-0 transition-opacity ease-in-out duration-500">
+            <h3 class="my-12 mx-auto text-[#333333] text-2xl font-question w-8/12">
+                <span class="text-sm text-[#D30024] py-0 my-0">
+                    estamos quase lá...
+                </span><br>
+                Como podemos te chamar?
+            </h3>
+
+            <div>
+                <input
+                    type="text"
+                    name=""
+                    id="q4_i1"
+                    placeholder="Seu nome ou apelido"
+                    class="w-8/12 h-12 border-2 border-[#858585] rounded-xl text-black text-xl px-2"
+                >
+            </div>
+
+            <div>
+                <button
+                    id="q4_b1"
+                    class="my-16 py-2 w-6/12 bg-white border-2 border-[#858585] rounded-xl text-black text-xl font-bold transition-all duration-200"
+                >
+                    <div id="q4_b1_d" class="mx-auto flex justify-center gap-x-2">
+                        <p>
+                            Próximo
+                        </p>
+                        <ion-icon class="text-3xl" name="chevron-forward-outline"></ion-icon>
+                    </div>
+                </button>
+            </div>
+
+            <div>
+                <button
+                    id="q4_back"
+                    class="my-12 underline"
+                >
+                    voltar para a etapa anterior
+                </button>
+            </div>
+        </div>
+
+        <div id="r" class="hidden absolute top-0 w-full opacity-0 transition-opacity ease-in-out duration-500">
+            <div class="mt-12 mb-2 mx-auto text-center w-10/12">
+                <p id="user_name" class="mx-auto text-[#D30024] text-2xl font-bold w-8/12">Vitinha,</p>
+                <p class="text-xl">
+                    aqui está o tratamento ideal para sua
+                    <span id="skin_data" class="font-bold"></span>
+                </p>
+            </div>
+
+            <div>
+                <img
+                    class="mx-auto h-10"
+                    src="./images/ilustrações/linha.svg"
+                    alt="Imagem de uma linha vertical pontilhada"
+                >
+                <img
+                    class="mx-auto h-12 my-1"
+                    src="./images/ilustrações/numero_1.svg"
+                    alt="Desenho de um número 1"
+                >
+
+                <p id="cleaning" class="w-8/12 mx-auto leading-5 text-md font-data mb-5"></p>
+            </div>
+
+            <div>
+                <img
+                    class="mx-auto h-10"
+                    src="./images/ilustrações/linha.svg"
+                    alt="Imagem de uma linha vertical pontilhada"
+                >
+                <img
+                    class="mx-auto h-12 my-1"
+                    src="./images/ilustrações/numero_2.svg"
+                    alt="Desenho de um número 2"
+                >
+
+                <p id="treatment" class="w-8/12 mx-auto leading-5 text-md font-data mb-5"></p>
+            </div>
+
+            <div>
+                <img
+                    class="mx-auto h-10"
+                    src="./images/ilustrações/linha.svg"
+                    alt="Imagem de uma linha vertical pontilhada"
+                >
+                <img
+                    class="mx-auto h-12 my-1"
+                    src="./images/ilustrações/numero_3.svg"
+                    alt="Desenho de um número 3"
+                >
+
+                <p id="protection" class="w-8/12 mx-auto leading-5 text-md font-data mb-12"></p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const q1 = document.querySelector('#q1');
+        const q2 = document.querySelector('#q2');
+        const q3 = document.querySelector('#q3');
+        const q4 = document.querySelector('#q4');
+        const r = document.querySelector('#r');
+        const step = document.querySelector('#step');
+        const q2_back = document.querySelector('#q2_back');
+        const q3_back = document.querySelector('#q3_back');
+        const q4_back = document.querySelector('#q4_back');
+        const user_name = document.querySelector('#user_name');
+        const skin_data = document.querySelector('#skin_data');
+        const cleaning = document.querySelector('#cleaning');
+        const treatment = document.querySelector('#treatment');
+        const protection = document.querySelector('#protection');
+        let type_of_skin;
+        let sensibility;
+        let needs;
+        let name;
+
+        const cleanings = [
+            'Gel de limpeza que limpa profundamente sem repuxar. Com niacinamida, extrato de moringa e livre de sulfatos.',
+            'Limpador antiacne com uma limpeza profunda, sem ressecar e sem sulfatos. Com ácido salicílico, melaleuca, niacinamida.'
+        ];
+        const treatments = [
+            'Tônico antiacne adstringente que proporcione uma limpeza eficaz e controle de oleosidade. Com melaleuca, centella e niacinamida.',
+            'Tônico com 7% de AHAs (4% de Glicólico, 2% de Málico e 1% de Lático) para uma esfoliação química.',
+            'Sérum uniformizador com retinol biomimético e 5% de niacinamida.',
+            'Gel, ou creme, hidratante, com beta-glucan, phytoesqualano e niacinamida.',
+            'Sérum-gel antioxidante com nano vitamina C 10%. Com ácido hialurônico, vitamina E, nano resveratrol, nano cafeína, niacinamida, e ou carnosina.',
+            'Sérum antissinais com retinol puro 0,3%, ácido hialurônico, peptídeo de cobre e niacinamida.',
+            'Água micelar para uma limpeza diária, sem enxágue. Livre de óleos.',
+            'Hidratante reparador em creme com ceramidas, pantenol e manteiga de karité.'
+        ];
+        const protections = [
+            'Protetor solar facial com toque seco FPS50. Com niacinamida e carnosina.',
+            'Tratamento, hidratação e proteção solar FPS30. Com vitamina C 10% e niacinamida.',
+            'Protetor solar facial FPS60 hidratante. Proteção UVA/UVB, luz azul e infravermelho.'
+        ];
+
+        q2_back.addEventListener('click', (event) => {
+            event.preventDefault();
+            q2.classList.replace('opacity-100', 'opacity-0');
+            q1.classList.replace('hidden', 'block');
+            setTimeout(() => {
+                q1.classList.replace('opacity-0', 'opacity-100');
+                q2.classList.replace('block', 'hidden');
+            }, 300);
+            step.textContent = '1 / 4';
+        });
+
+        q3_back.addEventListener('click', (event) => {
+            event.preventDefault();
+            q3.classList.replace('opacity-100', 'opacity-0');
+            q2.classList.replace('hidden', 'block');
+            setTimeout(() => {
+                q2.classList.replace('opacity-0', 'opacity-100');
+                q3.classList.replace('block', 'hidden');
+            }, 300);
+            step.textContent = '2 / 4';
+        });
+
+        q4_back.addEventListener('click', (event) => {
+            event.preventDefault();
+            q4.classList.replace('opacity-100', 'opacity-0');
+            q3.classList.replace('hidden', 'block');
+            setTimeout(() => {
+                q3.classList.replace('opacity-0', 'opacity-100');
+                q4.classList.replace('block', 'hidden');
+            }, 300);
+            step.textContent = '3 / 4';
+        });
+
+        function set_data(_cleaning, _treatment, _protection) {
+            cleaning.textContent = cleanings[(_cleaning - 1)];
+            treatment.textContent = treatments[(_treatment - 1)];
+            protection.textContent = protections[(_protection - 1)];
+        }
+
+        function load_data() {
+            console.log(name, type_of_skin, sensibility, needs);
+            user_name.textContent = `${name},`;
+            skin_data.textContent = `pele ${type_of_skin}, ${sensibility}, e com foco em ${needs}`;
+            
+            if (type_of_skin == 'mista') {
+                if (needs == 'acnes e cravos') {
+                    if (sensibility == 'sensível') { set_data(1, 1, 1); }
+                    else { set_data(2, 5, 1); }
+                }
+
+                if (needs == 'ressecamento') { set_data(1, 4, 3); }
+
+                if (needs == 'manchas e cicatrizes') {
+                    if (sensibility == 'sensível') { set_data(1, 3, 1); }
+                    else { set_data(1, 5, 1); }
+                }
+
+                if (needs == 'sensibilidade e irritação') {
+                    if (sensibility == 'sensível') { set_data(1, 7, 3); }
+                    else { set_data(1, 8, 3); }
+                }
+
+                if (needs == 'prevenção de sinais') { set_data(1, 5, 3); }
+
+                if (needs == 'linhsa finas e rugas') {
+                    if (sensibility == 'sensível') { set_data(1, 4, 1); }
+                    else { set_data(1, 5, 2); }
+                }
+            }
+
+            if (type_of_skin == 'oleosa') {
+                if (needs == 'acnes e cravos') {
+                    if (sensibility == 'sensível') { set_data(1, 3, 1); }
+                    else { set_data(2, 1, 1); }
+                }
+
+                if (needs == 'ressecamento') { set_data(1, 4, 2); }
+
+                if (needs == 'manchas e cicatrizes') {
+                    if (sensibility == 'sensível') { set_data(1, 3, 1); }
+                    else { set_data(2, 2, 2); }
+                }
+
+                if (needs == 'sensibilidade e irritação') { set_data(1, 7, 1); }
+
+                if (needs == 'prevenção de sinais') {
+                    if (sensibility == 'sensível') { set_data(1, 3, 1); }
+                    else { set_data(1, 6, 2); }
+                }
+
+                if (needs == 'linhsa finas e rugas') {
+                    if (sensibility == 'sensível') { set_data(1, 4, 1); }
+                    else { set_data(1, 6, 2); }
+                }
+            }
+
+            if (type_of_skin == 'normal') {
+                if (needs == 'acnes e cravos') {
+                    if (sensibility == 'sensível') { set_data(1, 1, 1); }
+                    else { set_data(1, 2, 1); }
+                }
+
+                if (needs == 'ressecamento') { set_data(1, 4, 2); }
+
+                if (needs == 'manchas e cicatrizes') {
+                    if (sensibility == 'sensível') { set_data(1, 3, 3); }
+                    else { set_data(1, 2, 2); }
+                }
+
+                if (needs == 'sensibilidade e irritação') { set_data(1, 7, 3); }
+
+                if (needs == 'prevenção de sinais') {
+                    if (sensibility == 'sensível') { set_data(1, 3, 3); }
+                    else { set_data(1, 2, 2); }
+                }
+
+                if (needs == 'linhsa finas e rugas') {
+                    if (sensibility == 'sensível') { set_data(1, 3, 3); }
+                    else { set_data(1, 2, 2); }
+                }
+            }
+
+            if (type_of_skin == 'seca') {
+                if (needs == 'acnes e cravos') {
+                    if (sensibility == 'sensível') { set_data(1, 8, 3); }
+                    else { set_data(1, 5, 2); }
+                }
+
+                if (needs == 'ressecamento') { set_data(1, 8, 3); }
+
+                if (needs == 'manchas e cicatrizes') { set_data(1, 3, 3); }
+
+                if (needs == 'sensibilidade e irritação') { set_data(1, 7, 3); }
+
+                if (needs == 'prevenção de sinais') { set_data(1, 5, 3); }
+
+                if (needs == 'linhsa finas e rugas') {
+                    if (sensibility == 'sensível') { set_data(1, 4, 3); }
+                    else { set_data(1, 5, 3); }
+                }
+            }
+        }
+
+        function clickButtonQ1(button_id, response, other_buttons) {
+            const button = document.querySelector(`#q1_${button_id}`);
+            const d1 = document.querySelector(`#q1_${button_id}_d1`);
+            const d2 = document.querySelector(`#q1_${button_id}_d2`);
+
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+                type_of_skin = response;
+                console.log(type_of_skin);
+                for (let i = 0; i < other_buttons.length; i++) {
+                    const other_button = document.querySelector(`#q1_${other_buttons[i]}`);
+                    other_button.disabled = true;
+                }
+                d1.classList.replace('opacity-100', 'opacity-0');
+                setTimeout(() => {
+                    d2.classList.replace('opacity-0', 'opacity-100');
+                }, 200);
+                setTimeout(() => {
+                    q1.classList.replace('opacity-100', 'opacity-0');
+                    q2.classList.replace('hidden', 'block');
+                    step.textContent = '2 / 4';
+                }, 1000);
+                setTimeout(() => {
+                    q1.classList.replace('block', 'hidden');
+                    q2.classList.replace('opacity-0', 'opacity-100');
+                }, 1200);
+                setTimeout(() => {
+                    d2.classList.replace('opacity-100', 'opacity-0');
+                    d1.classList.replace('opacity-0', 'opacity-100');
+                    for (let i = 0; i < other_buttons.length; i++) {
+                        const other_button = document.querySelector(`#q1_${other_buttons[i]}`);
+                        other_button.disabled = false;
+                    }
+                }, 2000);
+            });
+        }
+
+        function clickButtonQ2(button_id, response, other_buttons) {
+            const button = document.querySelector(`#q2_${button_id}`);
+
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+                sensibility = response;
+                console.log(sensibility);
+                for (let i = 0; i < other_buttons.length; i++) {
+                    const other_button = document.querySelector(`#q2_${other_buttons[i]}`);
+                    other_button.disabled = true;
+                }
+                button.classList.replace('border-black', 'border-[#B1D132]');
+                button.classList.replace('text-black', 'text-[#B1D132]');
+                setTimeout(() => {
+                    q2.classList.replace('opacity-100', 'opacity-0');
+                    q3.classList.replace('hidden', 'block');
+                    step.textContent = '3 / 4';
+                }, 800);
+                setTimeout(() => {
+                    q2.classList.replace('block', 'hidden');
+                    q3.classList.replace('opacity-0', 'opacity-100');
+                }, 1000);
+                setTimeout(() => {
+                    button.classList.replace('border-[#B1D132]', 'border-black');
+                    button.classList.replace('text-[#B1D132]', 'text-black');
+                    for (let i = 0; i < other_buttons.length; i++) {
+                        const other_button = document.querySelector(`#q2_${other_buttons[i]}`);
+                        other_button.classList.replace('text-[#858585]', 'text-black');
+                        other_button.disabled = false;
+                    }
+                }, 2000);
+            });
+        }
+
+        function clickButtonQ3(button_id, response, other_buttons) {
+            const button = document.querySelector(`#q3_${button_id}`);
+
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+                needs = response;
+                console.log(needs);
+                for (let i = 0; i < other_buttons.length; i++) {
+                    const other_button = document.querySelector(`#q3_${other_buttons[i]}`);
+                    other_button.classList.replace('text-black', 'text-[#858585]');
+                    other_button.disabled = true;
+                }
+                button.classList.replace('border-[#858585]', 'border-[#3F7ECA]');
+                button.classList.replace('text-black', 'text-[#3F7ECA]');
+                setTimeout(() => {
+                    q3.classList.replace('opacity-100', 'opacity-0');
+                    q4.classList.replace('hidden', 'block');
+                    step.textContent = '4 / 4';
+                }, 800);
+                setTimeout(() => {
+                    q4.classList.replace('opacity-0', 'opacity-100');
+                    q3.classList.replace('block', 'hidden');
+                }, 1000);
+                setTimeout(() => {
+                    button.classList.replace('border-[#3F7ECA]', 'border-[#858585]');
+                    button.classList.replace('text-[#3F7ECA]', 'text-black');
+                    for (let i = 0; i < other_buttons.length; i++) {
+                        const other_button = document.querySelector(`#q3_${other_buttons[i]}`);
+                        other_button.classList.replace('text-[#858585]', 'text-black');
+                        other_button.disabled = false;
+                    }
+                }, 2000);
+            });
+        }
+
+        function clickButtonQ4() {
+            const input = document.querySelector('#q4_i1');
+            const button = document.querySelector('#q4_b1');
+            
+            input.addEventListener('input', (event) => {
+                event.preventDefault();
+                let user_name = event.target.value;
+                user_name = (String(user_name[0]).toUpperCase() + user_name.slice(1));
+                if (user_name.length > 0 && user_name != "UNDEFINED") {
+                    button.disabled = false;
+                    button.classList.replace('border-[#858585]', 'border-[#D30024]');
+                    button.classList.replace('bg-white', 'bg-[#D30024]');
+                    button.classList.replace('text-black', 'text-white');
+                    name = user_name;
+                } else {
+                    button.disabled = true;
+                    button.classList.replace('border-[#D30024]', 'border-[#858585]');
+                    button.classList.replace('bg-[#D30024]', 'bg-white');
+                    button.classList.replace('text-white', 'text-black');
+                    name = '';
+                }
+                input.value = name;
+            });
+            
+            button.disabled = true;
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+                console.log(name);
+                step.textContent = '';
+                load_data();
+                q4.classList.replace('opacity-100', 'opacity-0');
+                r.classList.replace('hidden', 'block');
+                setTimeout(() => {
+                    r.classList.replace('opacity-0', 'opacity-100');
+                    q4.classList.replace('block', 'hidden');
+                }, 800);
+            });
+        }
+
+        clickButtonQ1('b1', 'mista', ['b2', 'b3', 'b4']);
+        clickButtonQ1('b2', 'oleosa', ['b1', 'b3', 'b4']);
+        clickButtonQ1('b3', 'normal', ['b1', 'b2', 'b4']);
+        clickButtonQ1('b4', 'seca', ['b1', 'b2', 'b3']);
+
+        clickButtonQ2('b1', 'sensível', ['b2']);
+        clickButtonQ2('b2', 'normal', ['b1']);
+
+        clickButtonQ3('b1', 'acnes e cravos', ['b2', 'b3', 'b4', 'b5', 'b6']);
+        clickButtonQ3('b2', 'ressecamento', ['b1', 'b3', 'b4', 'b5', 'b6']);
+        clickButtonQ3('b3', 'manchas e cicatrizes', ['b1', 'b2', 'b4', 'b5', 'b6']);
+        clickButtonQ3('b4', 'sensibilidade e irritação', ['b1', 'b2', 'b3', 'b5', 'b6']);
+        clickButtonQ3('b5', 'prevenção de sinais', ['b1', 'b2', 'b3', 'b4', 'b6']);
+        clickButtonQ3('b6', 'linhsa finas e rugas', ['b1', 'b2', 'b3', 'b4', 'b5']);
+        
+        clickButtonQ4();
+    </script>
+</body>
+
+</html>
